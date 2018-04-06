@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ShopApp</title>
+    <%= csrf_meta_tags %>
+
+
+    <%= javascript_include_tag 'http://code.jquery.com/jquery-latest.min.js' %>  
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

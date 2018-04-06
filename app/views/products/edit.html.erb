@@ -1,0 +1,44 @@
+<script type="text/javascript">
+	Materialize.updateTextFields()
+</script>
+
+<style type="text/css">
+	input[type=range]{
+		border: 0px;
+	}
+
+	.range-label{
+		top: -20px !important;
+	}
+</style>
+
+<h1>Edit Product</h1>
+
+ 
+<%= form_with :method => :put, :url => product_update_path do |form| %>
+ 
+
+ 
+  <div class="card container blue-grey darken-1" style="margin: 0 auto; padding: 30px">
+  	<%= form.hidden_field :variant_id, value:@parsed_product.variants[0]['id'] %>
+  	<div class="input-field">  		
+  	      <%= form.label :title,	:style => 'color:white;'  %>
+  	      <%= form.text_field :title, value:@parsed_product.title %>
+  	</div>
+  
+    <div class="input-field">    	
+          <%= form.label :price,	:style => 'color:white;'  %>
+          <%= form.text_field :price, value:@parsed_product.price  %>        
+    </div>
+     	
+  
+    <div class="card-action">    	
+        <%= form.submit :class => 'btn waves-effect waves-light btn-large red'%>
+        
+    </div>
+   
+  <% end %>
+   
+  <div class="card-action"><%= link_to 'Back', products_path %></div>
+
+</div>
