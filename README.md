@@ -14,6 +14,7 @@ Things you may want to cover:
 * Database creation
 
 * Database initialization
+ * Una oracion y astericsco.
 
 * How to run the test suite
 
