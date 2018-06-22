@@ -14,6 +14,9 @@ Things you may want to cover:
 * Database creation
 
 * Database initialization
+* You better learn this conflict fixing
+* Thing my friend,
+* If not you'll get in trouble.
 
 * How to run the test suite
 
