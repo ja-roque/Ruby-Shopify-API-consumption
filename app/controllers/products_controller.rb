@@ -1,13 +1,14 @@
 require 'httparty'
 
-ShopifyHeaders = { 
-	  "Authorization"  => "Basic YWIyNjhkNzUxN2E3NTA2MjY4MWFhNmU5Y2FmMTBmN2U6NmQyNzE2MWI2M2U0NGI4NGJlZThmODEzMmQwOGFmOWE=", 
+ShopifyHeaders = {
+	  "Authorization"  => "Basic YWIyNjhkNzUxN2E3NTA2MjY4MWFhNmU5Y2FmMTBmN2U6NmQyNzE2MWI2M2U0NGI4NGJlZThmODEzMmQwOGFmOWE=",
 }
 
+#This is a test
 def get_all_products
 
 	@parsed_products_array = []
-	
+
 	shopify_products = HTTParty.get("https://roquetest.myshopify.com/admin/products.json", :headers => ShopifyHeaders).parsed_response
 
 	shopify_products['products'].each do |product|
@@ -25,10 +26,10 @@ def get_all_products
 end
 
 def get_product(product_id)
-	
+
 	shopify_products = HTTParty.get("https://roquetest.myshopify.com/admin/products/"+product_id+".json", :headers => ShopifyHeaders).parsed_response
-	@parsed_product		
-	
+	@parsed_product
+
 	title 		= shopify_products['product']['title']
 	price 		= shopify_products['product']['variants'][0]['price']
 	img 		= shopify_products['product']['images'][0]['src']
@@ -96,7 +97,7 @@ end
 
 class ParsedProduct
   def initialize(product_id, title, variants=[], price, img, shop)
-    
+
   	@variants = variants
     @product_id = product_id
     @title 	= title
@@ -150,7 +151,7 @@ class ProductsController < ApplicationController
 	end
 
 	def new
-		
+
 	end
 
 
